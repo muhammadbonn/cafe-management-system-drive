@@ -3,6 +3,13 @@ import pandas as pd
 from datetime import datetime
 import db_manager as db
 
+import streamlit as st
+# Test if secrets are loaded
+try:
+    st.write("Is GSheets connected?", st.connection("gsheets") is not None)
+except Exception as e:
+    st.error(f"Error loading secrets: {e}")
+
 # Page configuration and RTL layout setup for Arabic UI
 st.set_page_config(page_title="Cafe Management System", page_icon="☕", layout="wide")
 st.markdown("""
