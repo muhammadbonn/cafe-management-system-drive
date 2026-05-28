@@ -4,8 +4,8 @@ import streamlit as st
 from streamlit_gsheets import GSheetsConnection
 
 def get_conn():
-    """Establish connection to Google Sheets securely using st.secrets."""
-    return st.connection("gsheets", type=GSheetsConnection)
+    # Ensure it looks for 'gsheets' connection as defined in secrets
+    return st.connection("gsheets", type="gsheets")
 
 def load_data(table_name):
     """Load data directly from the specific Google Sheet tab."""
